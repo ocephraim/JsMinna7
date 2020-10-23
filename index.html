@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            max-width: 90%;
+            margin: 0 auto;
+            font-family: 'Open Sans', sans-serif;
+        }
+        nav {
+            width: 100%;
+            padding: 24px 0 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .nav-brand {
+            font-weight: 600;
+            font-size: 24px;
+            color: #212121;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .link {
+            text-decoration: none;
+            margin-left: 24px;
+            color: #828282;
+            font-size: 14px;
+        }
+        .link:hover {
+            color: #0781f2;
+        }
+        .menu {
+            display: none;
+            font-size: 24px;
+        }
+        .showMenu {
+            display: flex;
+        }
+
+        @media screen and (max-width: 650px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 0;
+                padding: 32px 0 0;
+                flex-direction: column;
+                height: 100vh;
+                width: 100%;
+                align-items: center;
+                background: white;
+                transition: all ease 0.4s;
+            }
+            .showMenu {
+                display: flex;
+            }
+            .link {
+                margin-top: 24px;
+            }
+            .menu {
+                z-index: 1000;
+                display: initial;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Title</div>
+
+        <div class="nav-links">
+            <a href="" class="link">Solutions</a>
+            <a href="" class="link">Pricing</a>
+            <a href="" class="link">About us</a>
+            <a href="" class="link">Contact us</a>
+            <a href="" class="link">Help Center</a>
+        </div>
+
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const links = document.querySelector('.nav-links')
+
+        const toggleMenu = () => {
+            links.classList.toggle('showMenu');
+        }
+
+        menu.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
